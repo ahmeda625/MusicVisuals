@@ -16,4 +16,31 @@ public class AhmedsVisual extends Visual {
     {
         fullScreen(P3D, SPAN);
     }
-    
+
+    public void setup() {
+
+        //first we have to start the minim
+        startMinim();
+
+        //loading audio file in audioplayer
+        loadAudio("JimJoseph.mp3");
+
+        //making an array of background boxes and populating it
+        backgroundBoxes = new BackgroundBoxes[noOfBgBoxes];
+
+        for (int i = 0; i < noOfBgBoxes; i += 4) {
+            backgroundBoxes[i] = new BackgroundBoxes(0, height / 2, 10, height);
+        }
+
+        for (int i = 1; i < noOfBgBoxes; i += 4) {
+            backgroundBoxes[i] = new BackgroundBoxes(width, height / 2, 10, height);
+        }
+        for (int i = 2; i < noOfBgBoxes; i += 4) {
+            backgroundBoxes[i] = new BackgroundBoxes(width / 2, height, width, 10);
+        }
+        for (int i = 3; i < noOfBgBoxes; i += 4) {
+            backgroundBoxes[i] = new BackgroundBoxes(width / 2, 0, width, 10);
+        }
+
+        background(0);
+    }
