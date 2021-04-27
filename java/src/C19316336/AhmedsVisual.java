@@ -45,4 +45,13 @@ public class AhmedsVisual extends Visual {
         background(0);
     }
 
+    public void keyPressed()
+    {
+        if (key == ' ')
+        {
+            getAudioPlayer().cue(0);
+            getAudioPlayer().play();
+
+        }
+    }
     
