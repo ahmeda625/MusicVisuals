@@ -51,7 +51,13 @@ public class AhmedsVisual extends Visual {
         {
             getAudioPlayer().cue(0);
             getAudioPlayer().play();
-
         }
     }
-    
+
+    public void draw() {
+        try {
+            //making sure the fft is not null whenever draw() is called
+            calculateFFT();
+        } catch (VisualException e) {
+            e.printStackTrace();
+        }
