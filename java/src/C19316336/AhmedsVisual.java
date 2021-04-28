@@ -61,3 +61,37 @@ public class AhmedsVisual extends Visual {
         } catch (VisualException e) {
             e.printStackTrace();
         }
+
+        minScore1 = minScore;
+        avgScore1 = avgScore;
+        maxScore1 = maxScore;
+        minScore = 0;
+        avgScore = 0;
+        maxScore = 0;
+
+        //these loops increment the score variables based on the fft band values
+        for (int i = 0; i < fft.specSize() * specLow; i++) {
+            minScore += fft.getBand(i);
+        }
+
+        for (int i = (int) (fft.specSize() * specLow); i < fft.specSize() * specMid; i++) {
+            avgScore += fft.getBand(i);
+        }
+
+        for (int i = (int) (fft.specSize() * specMid); i < fft.specSize() * specHi; i++) {
+            maxScore += fft.getBand(i);
+        }
+
+        if (minScore1 > minScore) {
+            minScore = minScore1 - scoreDecreaseRate;
+        }
+
+        if (avgScore1 > avgScore) {
+            avgScore = avgScore1 - scoreDecreaseRate;
+        }
+
+        if (maxScore1 > maxScore) {
+            maxScore = maxScore1 - scoreDecreaseRate;
+        }
+        float scoreGlobal = 0.66f * minScore + 0.8f * avgScore + 1 * maxScore;
+        background(minScore / 100, avgScore / 100, maxScore / 100);
