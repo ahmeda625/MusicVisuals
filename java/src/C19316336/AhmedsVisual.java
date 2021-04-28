@@ -100,3 +100,35 @@ public class AhmedsVisual extends Visual {
         float previousBandValue = fft.getBand(0);
         float dist = -25;
         float multiplier = 2;
+
+        for (int i = 1; i < fft.specSize(); i++) {
+
+            float bandValue = fft.getBand(i) * (1 + (i / 50));
+            stroke(100 + minScore, 100 + avgScore, 100 + maxScore, 255 - i);
+            strokeWeight(1 + (scoreGlobal / 100));
+
+            //line that goes from center to bottom left
+            line(0, height - (previousBandValue * multiplier), dist * (i - 1), 0, height - (bandValue * multiplier), dist * i);
+            line((previousBandValue * multiplier), height, dist * (i - 1), (bandValue * multiplier), height, dist * i);
+            line(0, height - (previousBandValue * multiplier), dist * (i - 1), (bandValue * multiplier), height, dist * i);
+
+
+            //line that goes from center to top left
+            line(0, (previousBandValue * multiplier), dist * (i - 1), 0, (bandValue * multiplier), dist * i);
+            line((previousBandValue * multiplier), 0, dist * (i - 1), (bandValue * multiplier), 0, dist * i);
+            line(0, (previousBandValue * multiplier), dist * (i - 1), (bandValue * multiplier), 0, dist * i);
+
+
+            //line that goes from center to bottom right
+            line(width, height - (previousBandValue * multiplier), dist * (i - 1), width, height - (bandValue * multiplier), dist * i);
+            line(width - (previousBandValue * multiplier), height, dist * (i - 1), width - (bandValue * multiplier), height, dist * i);
+            line(width, height - (previousBandValue * multiplier), dist * (i - 1), width - (bandValue * multiplier), height, dist * i);
+
+
+            //line that goes from center to top right
+            line(width, (previousBandValue * multiplier), dist * (i - 1), width, (bandValue * multiplier), dist * i);
+            line(width - (previousBandValue * multiplier), 0, dist * (i - 1), width - (bandValue * multiplier), 0, dist * i);
+            line(width, (previousBandValue * multiplier), dist * (i - 1), width - (bandValue * multiplier), 0, dist * i);
+
+            previousBandValue = bandValue;
+        }
