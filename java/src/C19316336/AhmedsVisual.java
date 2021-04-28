@@ -95,3 +95,8 @@ public class AhmedsVisual extends Visual {
         }
         float scoreGlobal = 0.66f * minScore + 0.8f * avgScore + 1 * maxScore;
         background(minScore / 100, avgScore / 100, maxScore / 100);
+
+        //storing the first band of fft
+        float previousBandValue = fft.getBand(0);
+        float dist = -25;
+        float multiplier = 2;
