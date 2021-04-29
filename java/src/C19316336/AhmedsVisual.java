@@ -139,3 +139,15 @@ public class AhmedsVisual extends Visual {
             backgroundBoxes[i].display(minScore, avgScore, maxScore, intensity, scoreGlobal);
         }
     }
+
+    class BackgroundBoxes {
+        float startingZ = -10000, maxZ = 50, x, y, z, sizeX, sizeY;
+
+        BackgroundBoxes(float x, float y, float sizeX, float sizeY) {
+
+            this.x = x;
+            this.y = y;
+            this.z = random(startingZ, maxZ);
+            this.sizeX = sizeX;
+            this.sizeY = sizeY;
+        }
