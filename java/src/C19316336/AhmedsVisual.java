@@ -132,3 +132,10 @@ public class AhmedsVisual extends Visual {
 
             previousBandValue = bandValue;
         }
+
+        //invoking display method of each bgbox to draw it on screen
+        for (int i = 0; i < noOfBgBoxes; i++) {
+            float intensity = fft.getBand(i % ((int) (fft.specSize() * specHi)));
+            backgroundBoxes[i].display(minScore, avgScore, maxScore, intensity, scoreGlobal);
+        }
+    }
