@@ -16,7 +16,7 @@ public abstract class Visual extends PApplet
 	private AudioInput ai;
 	private AudioPlayer ap;
 	private AudioBuffer ab;
-	private FFT fft;
+	protected FFT fft;
 
 	private float amplitude  = 0;
 	private float smothedAmplitude = 0;

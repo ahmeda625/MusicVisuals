@@ -141,6 +141,7 @@ public class AhmedsVisual extends Visual {
     }
 
     class BackgroundBoxes {
+        
         float startingZ = -10000, maxZ = 50, x, y, z, sizeX, sizeY;
 
         BackgroundBoxes(float x, float y, float sizeX, float sizeY) {
@@ -151,3 +152,46 @@ public class AhmedsVisual extends Visual {
             this.sizeX = sizeX;
             this.sizeY = sizeY;
         }
+
+        void display(float scoreLow, float scoreMid, float scoreHi, float intensity, float scoreGlobal) {
+
+
+            //sets the color of the box based on score variables
+            fill(color(scoreLow+50, scoreMid+50, scoreHi+50, scoreGlobal+50),((scoreGlobal - 5) / 1000) * (255 + (z / 25)));
+            noStroke();
+
+            pushMatrix();
+
+            //this brings the box to the front, i.e., translates it
+            translate(x, y, z);
+
+            if (intensity > 100)
+                intensity = 100;
+
+            //this makes sure that when a box is brought to front, it gets bigger
+            scale(sizeX * (intensity / 100), sizeY * (intensity / 100), 20);
+
+            //drawing the box
+            box(1);
+            popMatrix();
+
+            //sets the color of the box based on score variables
+            fill(color(scoreLow+50, scoreMid+50, scoreHi+50, scoreGlobal+50), (scoreGlobal / 5000) * (255 + (z / 25)));
+            pushMatrix();
+
+            //this brings the box to the front, i.e., translates it
+            translate(x, y, z);
+            scale(sizeX, sizeY, 10);
+            box(1);
+            popMatrix();
+
+            z += (pow((scoreGlobal / 150), 2));
+            if (z >= maxZ) {
+                z = startingZ;
+            }
+        }
+    }
+
+}
+
+
