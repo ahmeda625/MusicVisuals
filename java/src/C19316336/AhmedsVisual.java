@@ -141,7 +141,7 @@ public class AhmedsVisual extends Visual {
     }
 
     class BackgroundBoxes {
-        
+
         float startingZ = -10000, maxZ = 50, x, y, z, sizeX, sizeY;
 
         BackgroundBoxes(float x, float y, float sizeX, float sizeY) {
