@@ -7,7 +7,7 @@ Student Number: C19316336
 # Description of the assignment
 ![my image](images/project.png)
 
-This Project is an audio visualiser which displays the effects of music and the different base and volume of it and it definitely is "Something beautiful to enjoy while listening to music." This project expresses different colors and design and it is pleasing to the eye. The best way to enjoy it is to click spacebar and enjoy the audio visualiser.
+This Project is an audio visualiser which displays the effects of music and the different base and volume of it and it definitely is "Something beautiful to enjoy while listening to music." This project expresses different colors and design and it is pleasing to the eye. The starting screen is where you can see the lines of the code but it hasnt moved yet and to do that would be that the best way to enjoy it is to click spacebar and enjoy the audio visualiser.
 
 # Instructions
 - In order to use this audio visualiser you would have to navigate to the folder which contains all the necessary files which is in: C:\Users\aalaz\OneDrive\Documents\OOP-2020-2021\MusicVisuals\java
