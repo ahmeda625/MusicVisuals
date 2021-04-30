@@ -71,7 +71,7 @@ class BackgroundBoxes {
 ```
 
 # What I am most proud of in the assignment
-I am quite proud of my ability to use github simoltaneously with visual studio code and commit changes efficiently using such a method. I feel like I was able to greatly improve my github skills as I am now able to use it well to the best of my abilities which I wasnt able to do in the start of this college year. I commited enough times that I needed as most of the work was done on visual studio code and I made sure a good amount of code was done before I commited and I only did this when I was sure that the code worked well and there were no errors shown.
+I am quite proud of my ability to use github simultaneously with visual studio code and commit changes efficiently using such a method. I feel like I was able to greatly improve my github skills as I am now able to use it well to the best of my abilities which I wasnt able to do in the start of this college year. I commited enough times that I needed as most of the work was done on visual studio code and I made sure a good amount of code was done before I commited and I only did this when I was sure that the code worked well and there were no errors shown.
 
 ![Gitbash image](images/gitbash.PNG)
 
